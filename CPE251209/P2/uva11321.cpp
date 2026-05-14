@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 #include <algorithm>
+#include <vector>
 using namespace std;
 
 int n,m;
@@ -22,20 +23,20 @@ int main(){
     mt19937 gen(rd());
     uniform_int_distribution<int> dis(1,40000);
 
-    cout<<"你要輸入幾個數字（n）:";
+    cout<<"Enter number count(n):";
     cin>>n;
-    int numbers[n];
-    cout<<"輸入要取的模數（m）:";
+    vector<int> numbers(n);
+    cout<<"Enter modulo number(m):";
     cin>>m;
 
     for(int i=0; i<n; i++)
         numbers[i]=dis(gen);
 
-    sort(numbers,numbers+n,SortRule);
+    sort(numbers.begin(),numbers.end(),SortRule);
 
-    for(int i:numbers)
+    for(auto &i:numbers)
         cout<<i<<" ";
     cout<<endl;
-    for(int i:numbers)
+    for(auto &i:numbers)
         cout<<i%m<<" ";
 }

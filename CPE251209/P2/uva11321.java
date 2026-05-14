@@ -1,3 +1,4 @@
+package P2;
 import java.util.*;
 
 public class uva11321 {
@@ -8,6 +9,6 @@ public class uva11321 {
         while(true){
             
         }
-        sc.close();
+        //sc.close();
     }
 }
